@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Smythe&display=swap" rel="stylesheet"> 
+    <title>Ruben's Restaurant Ordering App</title>
+</head>
+<body>
+    <main>
+        <div id="app-container">
+            <header>
+                <p class="big-text-header">Ruben's Diner</p>
+                <p class="small-text-header">The best meal you'll ever have.</p>
+            </header>
+            <section id="orders-container">
+            </section>
+            
+            <section id="checkout-container">
+                <p class="checkout-title-text">Your order</p>
+                <div id="items-container"></div>
+                <div class="checkout-divider"></div>
+                <div class="checkout-total-price">
+                    <p class="order-item-text">Total price:</p>
+                    <p class="checkout-price" id="total-price"></p>
+                </div>
+                <button id="complete-order-btn">Complete order</button>
+            </section>
+            
+            <div id="modal">
+                <p class="modal-text">Enter card details</p>
+                <form action="#" id="modal-form">
+                    <label for="fullName"></label>
+                    <input 
+                        type="text" 
+                        id="fullName" 
+                        name="fullName" 
+                        placeholder="Enter your name" 
+                        
+                        required>
+                    <label for="cardNumber"></label>
+                    
+                    <input 
+                        type="text" 
+                        id="cardNumber" 
+                        name="cardNumber" 
+                        placeholder="Enter card number" 
+                        oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');"
+                        maxlength="12"
+                        
+                        required
+                        >
+                    <input 
+                        type="text" 
+                        id="cvvNumber" 
+                        name="cvvNumber" 
+                        placeholder="Enter CVV" 
+                        oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');"
+                        maxlength="3"
+                        
+                        required>
+                    <label for="cvvNumber"></label>
+                    
+                    <button type="submit" class="complete-order-btn modal-btn" id="pay-btn">Pay</button>
+                </form>
+                
+            </div>
+        </div>
+        
+    </main>
+    <script src='index.js' type="module"></script>
+</body>
+</html>
